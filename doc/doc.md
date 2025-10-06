@@ -1,4 +1,4 @@
-# Título de tu proyecto
+# NutriWise
 
 - [Introducción](#introducción)
 - [Estado de arte o análisis del contexto](#estado-de-arte-o-análisis-del-contexto)
@@ -11,48 +11,31 @@
 
 ## Introducción
 
-> Profundiza en la descripción de tu proyecto más allá de lo que has puesto en el README
+**NutriWise** es tu web de planificación de menús saludables. **NutriWise** ofrece la posibilidad de crear tus propios menús semanales según tus requerimientos nutricionales y cuenta con una lista de la compra automatizada que añadirá los productos necesarios para las recetas de los próximos días. Además la web cuenta con unos menús propios, ¡así que no tendrás que ni de que preocuparte de que vas a comer mañana!
 
 ## Estado de arte o análisis del contexto
 
-> A quen vai destinada a aplicación? (Contexto social ou sector empresarial, tipo de persoas, ...)
-Cal é a necesidade ou necesidades que se pretenden cubrir ou satisfacer?
-Existen na actualidade aplicacións que tenten dar resposta a esa(s) necesidade(s)? En que medida o conseguen?
-O desenvolvemento da aplicación abre unha oportunidade de negocio? É posible comercializala? Como?
+Existen diversas aplicaciones móviles y webs de planificación de menús semanales por internet, aunque **NutriWise** tiene un enfoque ligeramente distinto. **NutriWise** busca ofrecer una planificación de menús a alguien que requiera unas caracteristicas nutricionales en concreto. Está pensado para deportistas, personas con dietas sin lípidos, veganos, personas con tratamiento onclógico y multitud de personas que necesiten unas necesidades nutricionales distintas a las de una persona normal. **NutrWise** pretende facilitar la vida de estas personas, donde muchas veces se encuentran en el problema de no saber que comer o cocinar porque están limitados por unos requerimientos nutricionales. Aunque por internet existen apps de seguimiento nutricional, la gran mayoría de estas son aplicaciones de pago o con micropagos inluídos. **NutriWise** tiene como objetivo realizar esto pero en un entorno gratuito, donde no tengas que econtrarte con pagos durante tu experiencia como usuario. **NutriWise** puede ser comercializada, ya que será lanzada como página web. Puede abrir una oportunidad de negocio, si establecemos subscripciones adicionales a la funcionalidad principal de la web o también si añadimos anuncios en nuestra web con Google AdSense.
 
 ## Propósito
 
-> En que consiste mi proyecto? Cuál es el propósito u objetivo principal del software desarrollado?
-> Esto lo debes tener claro desde el principio y **no es muy susceptible a cambiar**.
+El proyecto consiste en una webapp de planificación de menús semanales con una lista de la compra asociada a los menús. Además estos menús pueden incluir un seguimiento nutricional para las personas que así lo necesiten, es decir, llevará un contador de macronutrientes para así poder ajustar el menú que se crea a las necesidades nutricionales personales. Además la web tendrá ya preestrablecidos algunos menús, asi el usuario tampoco tiene la necesidad de pensar en crear unos menús. Por ejemplo, podemos ofrecer una serie de menús proteicos, menús bajos en sal, o menús bajos en lípidos.
 
 ## Objetivos
 
-> A partir del objetivo principal o propósito qué debes lograr en forma de subobjetivos
-> Esto es un apartado "vivo" que debes estar reajustando constantemente en tu avance.
-> Conforme vayas proponiendo cosas y consiguiéndolas, márcalas como objetivos, ya sea porque has conseguido implementar una funcionalidad o porque hayas comprendido cómo iniciar un proyecto con react o vue.
-> Las tareas generalmente salen de la definición de estos objetivos. Para lograr un objetivo, habitualmente suele suponer la realización de una o varias tareas.
+- [ ] Login del Usuario. El usuario debe tener un login para poder guardar su progreso.
+- [ ] Página de creación de menús. Debe dejar al usuario crear un menú de al menos un plato principal y un postre.
+- [ ] Página de seguimiento semanal. Será un calendario semanal donde el usuario puede añadir distintos menús a cada día para crear un planning semanal.
+- [ ] Lista de la compra. Una lista de la compra que se creará a según los menús que se añadan al planning semanal.
+- [ ] Página de menus preestrablecidos. Página en la que el usuario ya verá menus ya hechos y que podrá añadir al planning semanal sin necesidad de que él mismo tenga que crear el menú.
 
 ## Alcance
 
-> Delimitar lo que el proyecto incluye
-> Describir qué funcionalidades sí estarán implementadas.
->
-> Explicar hasta dónde llega el desarrollo (ej.: solo módulo autenticación básica sin implementar roles de usiario, sin personalización del estilo de la aplicación, etc. etc.).
->
-> Indicar qué usuarios o perfiles podrán usar la aplicación y cuáles no.
->
-> Señalar el contexto en el que se aplicará (ej.: entorno académico, startup o emprendimiento, prueba de concepto).
->
->Indicar lo que queda fuera (límites)
->
-> Explicar de forma explícita qué no se abordará aunque podría ser una mejora futura (esto evita expectativas poco realistas y muestra capacidad de acotar el trabajo).
-> Ser concreto y medible. Usar frases que definan claramente los límites: Por ejemplo:
->
-> - “El sistema permitirá registrar usuarios y gestionar roles básicos, pero no incluirá autenticación multifactor.”
->
-> - “Se desarrollará un prototipo funcional con datos de prueba, no una versión en producción.”
->
-> Relacionar el alcance con el tiempo y recursos disponibles. Justificar por qué se fijan esos límites (ej.: “debido al tiempo de desarrollo limitado, se implementará solo la versión de escritorio”).
+La página web constará de una página principal de bienvenida donde se mostrarán los diferentes menús de la web. La creación de menús, el calendario semanal, la lista de la compra y el "recetario", que será donde estarán los menús preestablecidos de la web. La web tiene un login, que desbloqueará las funciones de la web. 
+
+La web no incluye base de datos de alimentos para añadir a los menús. Tendrán que ser añadidos por el usuario, asi como la aportacion nutricional de cada uno. (Esto podría ser una implementación futura).
+
+La aplicación se aplicará como una prueba de concepto.
 
 ## TODO: A partir de este punto eres libre de organizar la documentación como estimes pero debes desarrollar el cuerpo de tu proyecto con apartados y subapartados que completen tu documentación
 
