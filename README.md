@@ -1,4 +1,12 @@
-# Tu título del Proyecto fin de ciclo
+# NutriWise. Tu app de planificación nutricional saludable.
+
+NutriWise es la app que necesitas para planificar tus comidas semanales de manera saludable. Con NutriWise ya no tendrás que andar preocupandote de hacerte la pregunta "¿Qué voy a comer hoy?", ya que con la planificación semanal de la app sabrás a todo momento que es lo que te toca comer o cocinar.
+
+NutriWise además cuenta con una lista de la compra, que añade los productos que necesites para realizar tus comidas semanales y así nunca se te olivide ninguno de los ingredientes necesarios para tus recetas de la semana.
+
+NutriWise te ayuda también a realizar un conteo de las calorías y macronutrientes que necesites o te pongas como objetivo para esa semana.
+
+¡NutriWise tambien se acuerda de los poco originales en la cocina! NutriWise cuenta con amplio apartado de menús preestablecidos, por lo que ni si quiera necesitarás pensar que recetas hacer. 
 
 > *TODO*: Este documento será la "*página de aterrizaje*" de tu proyecto. Será lo primero que vean los que se interesen por él. Cúida su redacción con todo tu mimo. Elimina posteriormente todas las lineas "*TODO*" cuando creas finalizada su redacción.
 > Puedes acompañar a la redacción de este fichero con imágenes o gifs, pero no abuses de ellos.
