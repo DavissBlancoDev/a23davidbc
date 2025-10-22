@@ -1,4 +1,6 @@
-<img src="img/logo.png" alt="Logo" style="width:20%; float:right; margin-right:50px; margin-top:15px;">
+<img src="img/logo.png" alt="Logo" align="right" width="20%">
+
+&nbsp;
 
 # NutriWise. Tu app de planificación nutricional saludable.
 
