@@ -1,3 +1,5 @@
+<img src="img/logo.png" alt="Logo" style="width:20%; float:right; margin-right:50px; margin-top:15px;">
+
 # NutriWise. Tu app de planificación nutricional saludable.
 
 NutriWise es la app que necesitas para planificar tus comidas semanales de manera saludable. Con NutriWise ya no tendrás que andar preocupandote de hacerte la pregunta "¿Qué voy a comer hoy?", ya que con la planificación semanal de la app sabrás a todo momento que es lo que te toca comer o cocinar.
