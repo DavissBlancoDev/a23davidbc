@@ -2,11 +2,11 @@
 
 Cosas que debes hacer:
 
-- [ ] Sugerimos que te instales los módulos de VScode que vienen recomendados en este repositorio. Para ello, vete a módulos y en la opción de buscar pon `@recommended`. Instálate todas las "*Workspace recommendations*".
+- [x] Sugerimos que te instales los módulos de VScode que vienen recomendados en este repositorio. Para ello, vete a módulos y en la opción de buscar pon `@recommended`. Instálate todas las "*Workspace recommendations*".
 
 - [ ] Asegúrate de que en el fichero [`/doc/doc.md`](doc.md) figure un índice de apartados que faciliten la lectura del documento. **Es obligatorio que haya índice**. Instálate el complemento recomendado [Markdown All in One en Vscode](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) (o busca alternativas) para facilitarte la generación de este índice. En la paleta de comandos de VSCode están las opciones de esta extensión.
 
-- [ ] Dispones de la extensión [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) para exportar tu [`/doc/doc.md`](doc.md) a dicho formato. En la paleta de comandos de VSCode están las opciones de esta extensión. NO incluyas el PDF a tu repo (no es lugar para ello). Esta extensión está por defecto ignorada para que no se sincronice con gitlab. Si tu tutor te pide que consignes el proyecto en pdf, ya sabes como hacerlo.
+- [x] Dispones de la extensión [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) para exportar tu [`/doc/doc.md`](doc.md) a dicho formato. En la paleta de comandos de VSCode están las opciones de esta extensión. NO incluyas el PDF a tu repo (no es lugar para ello). Esta extensión está por defecto ignorada para que no se sincronice con gitlab. Si tu tutor te pide que consignes el proyecto en pdf, ya sabes como hacerlo.
 
 - [ ] Importante **describir bien el proyecto**. Propósito, partes, funcionalidad, posibles tipos de usuarios, roles, etc.
 

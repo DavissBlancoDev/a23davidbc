@@ -5,7 +5,16 @@
 - [Propósito](#propósito)
 - [Objetivos](#objetivos)
 - [Alcance](#alcance)
-- [TODO: A partir de este punto eres libre de organizar la documentación como estimes pero debes desarrollar el cuerpo de tu proyecto con apartados y subapartados que completen tu documentación](#todo-a-partir-de-este-punto-eres-libre-de-organizar-la-documentación-como-estimes-pero-debes-desarrollar-el-cuerpo-de-tu-proyecto-con-apartados-y-subapartados-que-completen-tu-documentación)
+- [Funcionalidades del proyecto](#funcionalidades-del-proyecto)
+- [Tipos de usuario](#tipos-de-usuario)
+- [Modelo de negocio](#modelo-de-negocio)
+- [Normativa aplicable](#normativa-aplicable)
+- [Diseño](#diseño)
+- [Planificacion da solución técnica](#planificacion-da-solución-técnica)
+  - [Identificacion de fases](#identificacion-de-fases)
+  - [Identificación de recursos](#identificación-de-recursos)
+  - [Planificación temporal](#planificación-temporal)
+  - [Presupuesto](#presupuesto)
 - [Conclusiones](#conclusiones)
 - [Referencias, Fuentes consultadas y Recursos externos: Webgrafía](#referencias-fuentes-consultadas-y-recursos-externos-webgrafía)
 
@@ -23,11 +32,9 @@ El proyecto consiste en una webapp de planificación de menús semanales con una
 
 ## Objetivos
 
-- [ ] Login del Usuario. El usuario debe tener un login para poder guardar su progreso.
-- [ ] Página de creación de menús. Debe dejar al usuario crear un menú de al menos un plato principal y un postre.
-- [ ] Página de seguimiento semanal. Será un calendario semanal donde el usuario puede añadir distintos menús a cada día para crear un planning semanal.
-- [ ] Lista de la compra. Una lista de la compra que se creará a según los menús que se añadan al planning semanal.
-- [ ] Página de menus preestrablecidos. Página en la que el usuario ya verá menus ya hechos y que podrá añadir al planning semanal sin necesidad de que él mismo tenga que crear el menú.
+ - Crear menus completamente customizables por el usuario. Es decir, que el usuario pueda decidir que platos añade al menú, y que ingredientes poseen estos. Obligaremos al usuario a que mínimo un menú tenga un plato.
+ - Tener una lista de la compra que se actualizará cada vez que el usuario marque "Compra finalizada", lo cual borrará la lista y hará un resumen de lo que se ha comprado. (Hasta se podría exportar este resumen a un archivo .txt).
+ - Poder ver en forma de calendario semanal de tareas, que menus hay en cada dia para que el usuario vea que toca comer en cada momento del día.
 
 ## Alcance
 
@@ -37,10 +44,91 @@ La web no incluye base de datos de alimentos para añadir a los menús. Tendrán
 
 La aplicación se aplicará como una prueba de concepto.
 
-## TODO: A partir de este punto eres libre de organizar la documentación como estimes pero debes desarrollar el cuerpo de tu proyecto con apartados y subapartados que completen tu documentación
+## Funcionalidades del proyecto
 
-> Hemos elaborado un [checklist](checklist.md) de puntos necesarios para tu PFC, para que revises estas recomendaciones/especificaciones.
-> Apóyate en tu tutor/a si tienes duda de cómo organizar tu proyecto y estos apartados/subapartado. Cada proyecto y su contexto determinará la mejor forma de estructurarlo. Piensa bien cómo lo vas a hacer.
+- [ ] Login del Usuario. El usuario debe tener un login para poder guardar su progreso.
+- [ ] Página de creación de menús. Debe dejar al usuario crear un menú de al menos un plato principal, entrante y postre seran opcionales.
+- [ ] Página de seguimiento semanal. Será un calendario semanal donde el usuario puede añadir distintos menús a cada día para crear un planning semanal.
+- [ ] Lista de la compra. Una lista de la compra que se creará a según los menús que se añadan al planning semanal.
+- [ ] Página de menus preestrablecidos. Página en la que el usuario ya verá menus ya hechos y que podrá añadir al planning semanal sin necesidad de que él mismo tenga que crear el menú.
+
+## Tipos de usuario
+
+Esta aplicacion solo cuenta con un tipo de usuario, que será el usuario normal que se registre en la web. Solo necesitará proporcionar un correo electrónico y una contraseña para que pueda usar la aplicación, ya que obligaremos al usuario a registrarse o loguearse para poder usar la aplicación. Es decir, el usuario no podrá usar la web a menos que esté logueado.
+
+## Modelo de negocio
+
+La web estará basada en un modelo freemium ad-based, es decir, habrá anuncios (aunque intentaremos que sean lo menos molestos para el usuario) y la funcionalidad premium del control de seguimiento nutricional. Esta funcionalidad premium será de pago, una pequeña cantidad simbólica de 3,99€/año que nos permitirá tener unos ingresos mayores al modelo ad-based.
+
+## Normativa aplicable
+
+La web cumple con el Reglamento General de Proteccíon de Datos (RGPD): se informa a los usuarios sobre el uso de cookies y datos personales y se obtiene su consentimiento cuando corresponde.
+
+Los ingresos procedentes de publicidad se declaran conforme a la normativa fiscal vigente en España.
+
+Se adoptan medidas de seguridad informática para proteger la información y continuidad del servicio.
+
+Se contempla la posibilidad de acceder a ayudas y subvenciones para proyectos digitales, de acuerdo con la normativa local y estatal.
+
+## Diseño
+
+Incluimos un mockup de la *landing page* que verá el usuario nada más aterrizar en nuestra web. 
+
+![alt text](img/landing.png)
+
+Si el usuario quiere acceder a uno de estos menus de la web, una ventana modal con el login saltará para que se loguee o registre.
+
+## Planificacion da solución técnica
+
+### Identificacion de fases
+
+El desarrollo de la web está dividido en las siguientes etapas:
+
+1. Análisis y documentación.
+   - Definir objetivos, alcance y funcionalidades.
+   - Estudiar normativa, necesidades y público objetivo.
+2. Diseño.
+   - Diagramas E/R, UML, mockups de interfaz.
+3. Desarrollo front-end.
+4. Desarrollo backend.
+   - Base de datos.
+   - Conexion de base de datos con el front end
+5. Pruebas y validación.
+6. Despliegue y mantenimiento.
+
+### Identificación de recursos
+
+Humanos:
+  - Un único desarrollador full stack que se encargará de hacer toda la aplicación.
+  
+Materiales y técnicos:
+  - Ordenador y software de desarrollo.
+  - Hosting web.
+  - Base de Datos
+  - Herramientas de diseño
+
+### Planificación temporal
+
+| Fase | Duración | Semana |
+| --- | ---: | :---: |
+| Análisis y documentación | 1 semana | 1 |
+| Diseño | 2 semanas | 2-3 |
+| Desarrollo front-end | 2 semanas | 4-5 |
+| Desarrollo back-end | 2 semanas | 6-7 |
+| Pruebas | 1 semana | 8 |
+| Despliegue | 1 semana | 9 |
+
+### Presupuesto
+
+Los gastos de la web serían los siguientes.
+
+| Concepto | Coste |
+| --- | --- |
+| Hosting y dominio | 50-100€ |
+| Herramientas de diseño | 0€ |
+| Software de desarrollo | 0€ |
+| Publicidad | 0€ |
+| **TOTAL ESTIMADO** | **50-100€** | 
 
 ## Conclusiones
 
