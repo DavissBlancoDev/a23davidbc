@@ -1,0 +1,109 @@
+/* --- GENERAL --- */
+body {
+  font-family: "Noto Sans", Arial, sans-serif;
+  margin: 0;
+  background-color: #b8c7a1;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- HEADER --- */
+header {
+  background-color: #5c7c3a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 20%;
+}
+
+.icono {
+  width: 35px;
+  height: 35px;
+}
+
+.logo h1 {
+  font-family: "Fredoka One", sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  color: white;
+}
+
+/* --- BOTONES --- */
+.buttons .btn {
+  text-decoration: none;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-left: 15px;
+  cursor: pointer;
+  background-color: #a5ad27;
+  color: white;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.buttons .sign {
+  background-color: #b3bf28;
+}
+
+.buttons .login {
+  background-color: #a0a91f;
+}
+
+.buttons .btn:hover {
+  opacity: 0.9;
+}
+
+
+/* --- MAIN --- */
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #547a38;
+  border-radius: 25px;
+  width: 300px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.card p {
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* --- FOOTER --- */
+footer {
+  background-color: #384e2c;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  line-height: 1.4;
+}
