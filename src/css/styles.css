@@ -12,58 +12,109 @@ body {
 /* --- HEADER --- */
 header {
   background-color: #5c7c3a;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
+  padding: 10px 50px;
+  /* ⬅️ reducido de 30px 80px */
+  flex-wrap: wrap;
+  /* permite que los botones bajen si no caben */
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: 20%;
+  gap: 15px;
+  flex-shrink: 0;
+  /* evita que se reduzca demasiado */
 }
 
-.icono {
-  width: 35px;
-  height: 35px;
+.logo img {
+  width: 160px;
+  height: 140px;
 }
 
 .logo h1 {
-  font-family: "Fredoka One", sans-serif;
-  font-size: 2rem;
+  font-family: 'Baloo 2', cursive;
+  font-weight: 700;
+  font-size: 70px;
   margin: 0;
   color: white;
 }
 
-/* --- BOTONES --- */
-.buttons .btn {
-  text-decoration: none;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-  margin-left: 15px;
-  cursor: pointer;
-  background-color: #a5ad27;
+/* === BOTONES === */
+.buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buttons button {
+  background-color: #b0c52f;
   color: white;
-  font-size: 1rem;
-  display: inline-block;
+  border: none;
+  padding: 16px 30px;
+  /* botones más grandes */
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  /* texto más grande */
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: #9aad26;
+  transform: scale(1.05);
+}
+
+/* Para quitar borde azul de enfoque */
+.buttons button:focus {
+  outline: none;
+}
+
+
+/* --- HERO SECTION --- */
+/* --- HERO SECTION COMPACTA --- */
+.hero {
+  min-height: 50vh; /* más pequeña que antes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 1.5rem; /* menos padding vertical */
+  background: linear-gradient(135deg, #b0c52f 0%, #5c7c3a 100%);
+  color: white;
 }
 
-.buttons .sign {
-  background-color: #b3bf28;
+.hero h1 {
+  font-size: 2.5rem; /* ligeramente más pequeño */
+  margin-bottom: 0.8rem;
 }
 
-.buttons .login {
-  background-color: #a0a91f;
+.hero p {
+  font-size: 1.1rem;
+  max-width: 550px;
+  margin-bottom: 1.5rem;
 }
 
-.buttons .btn:hover {
-  opacity: 0.9;
+.hero .btn-login,
+.hero .btn-signup {
+  padding: 14px 25px; /* ligeramente más pequeño */
+  font-size: 16px;
 }
+
+
+.hero img {
+  max-width: 450px;
+  width: 100%;
+  margin-top: 2rem;
+}
+
 
 
 /* --- MAIN --- */
@@ -83,10 +134,21 @@ main {
   width: 300px;
   padding: 25px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.card {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+
 .card h2 {
+  color: white;
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 700;
@@ -106,4 +168,151 @@ footer {
   font-size: 0.9rem;
   color: #f0f0f0;
   line-height: 1.4;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+  .logo img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .logo h1 {
+    font-size: 50px;
+  }
+
+  .buttons button {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  header {
+    padding: 15px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo h1 {
+    font-size: 42px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buttons button {
+    width: 160px;
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 36px;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .buttons button {
+    width: 140px;
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+}
+
+/* Estilo general del formulario */
+/* Modales en modo claro */
+.modal-content {
+  background-color: white;
+  /* Fondo claro */
+  color: black;
+  /* Texto negro */
+  border-radius: 12px;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+  /* Sin líneas */
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.form-label {
+  color: black;
+  /* Etiquetas en negro */
+}
+
+.form-control {
+  background-color: #f8f9fa;
+  /* Input claro */
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #712cf9;
+  /* tu color principal si quieres */
+}
+
+/* Botón Login */
+.btn-login {
+  background-color: #0d6efd;
+  /* azul original */
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+  background-color: #0b5ed7;
+  /* azul más oscuro */
+  color: white;
+  /* mantener texto blanco */
+}
+
+/* Botón Sign Up */
+.btn-signup {
+  background-color: #28a745;
+  /* verde original */
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-signup:hover {
+  background-color: #218838;
+  /* verde más oscuro */
+  color: white;
+  /* mantener texto blanco */
+}
+
+/* Opcional: para los botones dentro del modal de aviso de acceso */
+#accessModal .btn-login,
+#accessModal .btn-signup {
+  flex: 1;
+  /* asegura que ocupen mismo ancho */
 }
