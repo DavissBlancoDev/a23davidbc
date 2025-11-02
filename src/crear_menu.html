@@ -153,65 +153,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS funcional -->
-  <script>
-    const profileMenu = document.querySelector(".profile-menu");
-    const profileBtn = document.querySelector(".profile-btn");
-
-    profileBtn.addEventListener("click", () => {
-      profileMenu.classList.toggle("active");
-    });
-
-    // Cierra el menú si se hace clic fuera
-    document.addEventListener("click", (e) => {
-      if (!profileMenu.contains(e.target)) {
-        profileMenu.classList.remove("active");
-      }
-    });
-  </script>
-
-  <script>
-    // Añadir ingrediente
-    document.querySelectorAll('.add-ingredient').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const containerId = btn.dataset.target;
-        const list = document.getElementById(containerId);
-
-        const ingredientDiv = document.createElement('div');
-        ingredientDiv.className = 'input-group mb-2';
-        ingredientDiv.innerHTML = `
-          <input type="text" class="form-control" placeholder="Ingrediente" required>
-          <input type="text" class="form-control" placeholder="Cantidad (opcional)">
-          <button type="button" class="btn btn-outline-danger remove-ingredient">✖</button>
-        `;
-
-        list.appendChild(ingredientDiv);
-
-        // Botón eliminar ingrediente
-        ingredientDiv.querySelector('.remove-ingredient').addEventListener('click', () => {
-          ingredientDiv.remove();
-        });
-      });
-    });
-
-    // Envío del formulario
-    document.getElementById('menuForm').addEventListener('submit', e => {
-      e.preventDefault();
-
-      const menuName = document.getElementById('menuName').value.trim();
-      const principal = document.getElementById('principalName').value.trim();
-
-      if (!menuName || !principal) {
-        alert('El nombre del menú y del plato principal son obligatorios.');
-        return;
-      }
-
-      alert('✅ Menú "' + menuName + '" guardado correctamente.');
-      e.target.reset();
-
-      // Limpia listas de ingredientes
-      document.querySelectorAll('.ingredient-list').forEach(list => list.innerHTML = '');
-    });
-  </script>
+  <script src="js/profile.js"></script>
+  <script src="js/menu.js"></script>
 
 </body>
 
