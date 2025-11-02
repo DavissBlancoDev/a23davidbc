@@ -1,0 +1,147 @@
+/* ========================================================= */
+/* === CSS PÁGINA CREACIÓN DE MENÚS - crear_menus.css === */
+/* ========================================================= */
+
+/* --- CONTENEDOR PRINCIPAL --- */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 20px;
+  min-height: calc(100vh - 100px); /* para dejar espacio header/footer */
+}
+
+/* --- TÍTULOS --- */
+main h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #384e2c;
+  margin-bottom: 0rem;
+}
+
+main p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+
+/* --- FORMULARIO --- */
+#menuForm {
+  background-color: #f8f9fa;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Inputs */
+#menuForm .form-control {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  transition: all 0.2s ease;
+}
+
+#menuForm .form-control:focus {
+  border-color: #b0c52f;
+  box-shadow: 0 0 8px rgba(176,197,47,0.3);
+}
+
+/* Etiquetas */
+#menuForm .form-label {
+  font-weight: 600;
+  color: #384e2c;
+}
+
+/* --- ACORDEÓN --- */
+.accordion-button {
+  background-color: #e8f0d0;
+  color: #384e2c;
+  font-weight: 600;
+  border-radius: 12px;
+  margin-bottom: 5px;
+  transition: all 0.2s ease;
+}
+
+.accordion-button:hover {
+  background-color: #d0e0a0;
+}
+
+.accordion-body {
+  background-color: #f0f8e0;
+  border-radius: 12px;
+}
+
+/* --- INGREDIENTES --- */
+.ingredients-container {
+  margin-top: 10px;
+}
+
+.ingredient-list .input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.ingredient-list .form-control {
+  flex: 1;
+}
+
+.add-ingredient {
+  margin-top: 5px;
+}
+
+/* Botón eliminar ingrediente */
+.remove-ingredient {
+  background-color: #f8d7da;
+  color: #c0392b;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.remove-ingredient:hover {
+  background-color: #f5b7b1;
+  color: #922b21;
+}
+
+/* --- BOTÓN GUARDAR --- */
+#menuForm button[type="submit"] {
+  background-color: #5c7c3a;
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 12px 40px;
+  transition: all 0.3s ease;
+}
+
+#menuForm button[type="submit"]:hover {
+  background-color: #4b662f;
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  #menuForm {
+    padding: 20px;
+  }
+
+  main h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 40px 15px;
+  }
+
+  #menuForm {
+    padding: 15px;
+  }
+}
