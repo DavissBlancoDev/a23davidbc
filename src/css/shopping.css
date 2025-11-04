@@ -1,0 +1,100 @@
+.shopping-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px 20px 40px 20px;
+  background: #fffbe6; /* color papel */
+  border: 2px solid #e0dede;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+.shopping-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold; /* <- título en negrita */
+}
+
+
+/* Clip decorativo arriba (tipo sujetapapeles) */
+.shopping-container::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 20px;
+  background: #d1c4b2; /* color del clip */
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Título */
+.shopping-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Lista tipo notas */
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff9e6;
+  border: 1px solid #e0dede;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+/* Efecto hover sobre cada item */
+.list-group-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Item marcado como comprado */
+.list-group-item.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  background: #d8f3dc;
+}
+
+/* Botones dentro de cada item */
+.list-group-item button {
+  margin-left: 5px;
+}
+
+/* Input y añadir ingrediente */
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.input-group button {
+  flex-shrink: 0;
+  padding: 0 16px;
+}
+
+/* Boton borrar */
+#clearListBtn {
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 12px;
+  transition: transform 0.2s;
+}
+
+#clearListBtn:hover {
+  transform: scale(1.03);
+}

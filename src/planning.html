@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriWise - Planning Semanal</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tus estilos globales -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Estilos exclusivos del planning -->
+  <link rel="stylesheet" href="css/planning.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+        <img src="/img/logo.png" alt="NutriWise Logo" />
+        <h1>NutriWise</h1>
+      </a>
+    </div>
+
+    <!-- Perfil -->
+    <div class="profile-menu">
+      <button class="profile-btn">
+        <i class="bi bi-person-circle"></i> Hola, <span id="userName">David</span> <i class="bi bi-caret-down-fill"></i>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="/perfil.html">Mi perfil</a></li>
+        <li><a href="/logout" class="logout"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container py-4">
+    <h2 class="text-center mb-2">Planning semanal</h2>
+    <p class="text-center text-muted mb-4 small">Organiza tus menús de lunes a domingo. Pulsa <strong>+</strong> en un slot para añadir un menú.</p>
+
+    <div class="table-responsive">
+      <table class="table table-bordered text-center align-middle planning-table">
+        <thead class="table-success">
+          <tr>
+            <th class="text-start">Comida / Día</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sábado</th>
+            <th>Domingo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="text-start">Desayuno</th>
+            <td><div class="slot" data-day="lunes" data-meal="desayuno"><button class="btn add-menu-btn" title="Añadir menú">+</button></div></td>
+            <td><div class="slot" data-day="martes" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="miercoles" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="jueves" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="viernes" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="sabado" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="domingo" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+          </tr>
+
+          <tr>
+            <th class="text-start">Almuerzo</th>
+            <td><div class="slot" data-day="lunes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="martes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="miercoles" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="jueves" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="viernes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="sabado" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="domingo" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+          </tr>
+
+          <tr>
+            <th class="text-start">Comida</th>
+            <td><div class="slot" data-day="lunes" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="martes" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="miercoles" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="jueves" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="viernes" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="sabado" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="domingo" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+          </tr>
+
+          <tr>
+            <th class="text-start">Merienda</th>
+            <td><div class="slot" data-day="lunes" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="martes" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="miercoles" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="jueves" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="viernes" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="sabado" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="domingo" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+          </tr>
+
+          <tr>
+            <th class="text-start">Cena</th>
+            <td><div class="slot" data-day="lunes" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="martes" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="miercoles" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="jueves" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="viernes" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="sabado" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+            <td><div class="slot" data-day="domingo" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- MODAL 1: Selección de menú (grid de cards con platos) -->
+  <div class="modal fade" id="selectMenuModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Selecciona un menú</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div id="menusGrid" class="row g-3">
+            <!-- Ejemplo de card de menú -->
+            <div class="col-md-4">
+              <div class="card menu-card h-100 shadow-sm" data-menu-id="1">
+                <img src="/img/menus/menu1.jpg" class="card-img-top" alt="Menú Mediterráneo">
+                <div class="card-body">
+                  <h5 class="card-title mb-2">Menú Mediterráneo</h5>
+                  <ul class="list-unstyled small mb-3">
+                    <li><strong>Entrante:</strong> Ensalada griega</li>
+                    <li><strong>Principal:</strong> Pollo al horno</li>
+                    <li><strong>Postre:</strong> Flan casero</li>
+                  </ul>
+                  <button class="btn btn-outline-success btn-sm w-100 view-menu-btn">
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card menu-card h-100 shadow-sm" data-menu-id="2">
+                <div class="card-body">
+                  <h5 class="card-title mb-2">Menú Vegetariano</h5>
+                  <ul class="list-unstyled small mb-3">
+                    <li><strong>Entrante:</strong> Crema de calabaza</li>
+                    <li><strong>Principal:</strong> Lasaña vegetal</li>
+                    <li><strong>Postre:</strong> Yogur con miel</li>
+                  </ul>
+                  <button class="btn btn-outline-success btn-sm w-100 view-menu-btn">
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card menu-card h-100 shadow-sm" data-menu-id="3">
+                <div class="card-body">
+                  <h5 class="card-title mb-2">Menú Proteico</h5>
+                  <ul class="list-unstyled small mb-3">
+                    <li><strong>Entrante:</strong> Gazpacho</li>
+                    <li><strong>Principal:</strong> Salmón a la plancha</li>
+                    <li><strong>Postre:</strong> Fruta fresca</li>
+                  </ul>
+                  <button class="btn btn-outline-success btn-sm w-100 view-menu-btn">
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: Detalle del menú -->
+  <div class="modal fade" id="menuDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="detailModalTitle">Vista rápida del menú</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex gap-3 align-items-start mb-3">
+            <div>
+              <h5 id="detailName">Nombre menú</h5>
+              <p id="detailDesc" class="text-muted mb-0">Descripción breve</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <h6>Ingredientes</h6>
+          <div id="detailIngredients" class="list-group mb-3">
+            <!-- JS genera los checkbox -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+          <button class="btn btn-success" id="confirmAddToSlot">Confirmar y añadir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 David Blanco</p>
+    <p>NutriWise está licenciado bajo la Licencia MIT.</p>
+  </footer>
+
+  <!-- CONTENEDOR DE TOASTS -->
+  <div id="toastContainer" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/profile.js"></script>
+  <script src="scripts/planning.js"></script>
+</body>
+
+</html>
