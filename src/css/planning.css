@@ -1,6 +1,26 @@
-/* PLANNING - estilos exclusivos */
+/* =========================================================
+   PLANNING - estilos exclusivos
+   ========================================================= */
 
-/* Tabla / contenedor */
+/* --- TÍTULOS --- */
+main h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #384e2c;
+  margin-bottom: 0rem;
+}
+
+main p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* --- TABLA / CONTENEDOR --- */
 .planning-table {
   border-radius: 12px;
   overflow: hidden;
@@ -12,7 +32,7 @@
   font-weight: 700;
 }
 
-/* Slot básico */
+/* --- SLOT BÁSICO --- */
 .slot {
   min-height: 80px;
   display: flex;
@@ -21,7 +41,7 @@
   padding: 0.5rem;
 }
 
-/* Botón + */
+/* --- BOTÓN "+" --- */
 .add-menu-btn {
   width: 44px;
   height: 44px;
@@ -32,12 +52,13 @@
   font-weight: 700;
   transition: all 0.15s;
 }
+
 .add-menu-btn:hover {
   background: #eaf5e6;
   transform: translateY(-3px);
 }
 
-/* Card de menú dentro del modal */
+/* --- CARD DE MENÚ (MODAL) --- */
 .menu-card {
   border-radius: 12px;
   border: 1px solid #e1e7d7;
@@ -46,10 +67,12 @@
   padding: 12px;
   cursor: pointer;
   transition: transform 0.15s, box-shadow 0.15s;
+  min-height: 220px;
 }
+
 .menu-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(27,85,16,0.12);
+  box-shadow: 0 12px 28px rgba(27, 85, 16, 0.12);
 }
 
 .menu-card .title {
@@ -57,31 +80,37 @@
   color: #27471f;
   margin-bottom: 6px;
 }
+
 .menu-card .dishes {
   font-size: 0.95rem;
   color: #4b5b3a;
   min-height: 36px;
 }
 
-/* grid cards */
+/* --- GRID DE CARDS --- */
 #menusGrid .col {
   display: flex;
 }
 
-/* Detalle: ingredientes (checkbox list) */
+/* --- DETALLE DE INGREDIENTES (MODAL) --- */
 #detailIngredients .list-group-item {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Celda con menú (ya asignado) */
+#detailIngredients .list-group-item input[type="checkbox"] {
+  accent-color: #7cb342;
+}
+
+/* --- CELDA CON MENÚ ASIGNADO --- */
 .slot.assigned {
   padding: 8px;
   text-align: left;
   gap: 8px;
   flex-direction: column;
   align-items: stretch;
+  transition: opacity 0.2s ease, text-decoration 0.2s ease;
 }
 
 .slot.assigned .assigned-header {
@@ -95,37 +124,7 @@
   color: #27471f;
 }
 
-.slot.assigned .remove-assignment {
-  background: transparent;
-  border: none;
-  color: #c0392b;
-  font-size: 1rem;
-}
-
-/* Badge pequeño para tipo de comida (opcional) */
-.slot .meal-badge {
-  font-size: 0.7rem;
-  background: rgba(124,179,66,0.12);
-  color: #375a20;
-  padding: 3px 8px;
-  border-radius: 999px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .planning-table thead th { font-size: 0.9rem; }
-  .slot { min-height: 70px; }
-  .add-menu-btn { width: 38px; height: 38px; }
-}
-
-@media (max-width: 520px) {
-  .planning-table thead th { font-size: 0.8rem; }
-  .slot { min-height: 64px; padding: 0.25rem; }
-}
-
-/* === NUEVOS ESTILOS PARA EL PLANNING SEMANAL === */
-
-/* Menús añadidos dentro de un slot */
+/* --- DETALLES DEL MENÚ DENTRO DEL SLOT --- */
 .slot.assigned .menu-details {
   margin-top: 4px;
   font-size: 0.9rem;
@@ -141,57 +140,77 @@
   padding: 0;
 }
 
-/* Contenedor de acciones (papelera + check) */
-.slot.assigned .assigned-actions {
+/* --- CONTENEDOR DE ACCIONES (CHECK + PAPELERA) --- */
+.slot.assigned .slot-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 10px;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
-/* Botones dentro del slot */
-.slot.assigned .assigned-actions button {
+/* --- BOTONES DENTRO DEL SLOT --- */
+.slot.assigned .slot-actions .btn {
+  padding: 4px 6px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  transition: all 0.15s ease-in-out;
   border: none;
   background: transparent;
   cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-.slot.assigned .assigned-actions button:hover {
-  transform: scale(1.15);
-  opacity: 0.8;
+/* --- ICONOS --- */
+.slot.assigned .mark-eaten i,
+.slot.assigned .remove-assignment i {
+  font-size: 1rem;
+  vertical-align: middle;
 }
 
-/* Icono eliminar */
+/* --- HOVER BOTONES --- */
+.slot.assigned .remove-assignment:hover {
+  background-color: #ffebee;
+  border-color: #e57373;
+  color: #b71c1c;
+  transform: scale(1.05);
+}
+
+.slot.assigned .mark-eaten:hover {
+  background-color: #e8f5e9;
+  border-color: #81c784;
+  color: #1b5e20;
+  transform: scale(1.05);
+}
+
+/* --- ICONOS COLOR BASE --- */
 .slot.assigned .remove-assignment {
   color: #c0392b;
   font-size: 1.1rem;
 }
 
-/* Icono check (menú comido) */
 .slot.assigned .mark-eaten {
   color: #2e7d32;
   font-size: 1.2rem;
 }
 
-/* Menú tachado cuando está marcado como comido */
+/* --- ESTADO "EATEN" (MENÚ COMIDO) --- */
 .slot.assigned.eaten .menu-name,
 .slot.assigned.eaten .menu-details {
   text-decoration: line-through;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-/* Transición suave al tachar */
-.slot.assigned {
-  transition: opacity 0.2s ease, text-decoration 0.2s ease;
+/* --- ANIMACIÓN ELIMINAR --- */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
-/* Hover en el menú dentro del planning */
+/* --- HOVER GENERAL EN SLOT --- */
 .slot.assigned:hover {
   background: #f7faf4;
 }
 
-/* Modal: título y estructura */
+/* --- MODAL DETALLE --- */
 #menuDetailModal .modal-title {
   font-weight: 700;
   color: #27471f;
@@ -201,64 +220,40 @@
   color: #4b5b3a;
 }
 
-/* Tarjetas del modal más compactas */
-.menu-card {
-  min-height: 220px;
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .planning-table thead th { font-size: 0.9rem; }
+  .slot { min-height: 70px; }
+  .add-menu-btn { width: 38px; height: 38px; }
 }
 
-/* Checkbox ingredientes */
-#detailIngredients .list-group-item input[type="checkbox"] {
-  accent-color: #7cb342;
+@media (max-width: 520px) {
+  .planning-table thead th { font-size: 0.8rem; }
+  .slot { min-height: 64px; padding: 0.25rem; }
 }
 
-/* Cuando el menú está marcado como comido */
-.slot.eaten .menu-name,
-.slot.eaten .assigned-dishes {
-  text-decoration: line-through;
-  color: #7a7a7a;
-  opacity: 0.8;
+/* --- Encabezado del planning --- */
+.planning-header {
+  text-align: center;
+  margin-bottom: 1.5rem; /* margen razonable antes de la tabla */
 }
 
-/* Pequeña animación al eliminar */
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.25s ease;
+.planning-header h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #2e4732;
+  margin-bottom: 1.8rem; /* más separación entre título y subtítulo */
 }
 
-/* --- Ajustes visuales de los botones del planning --- */
-
-.slot.assigned .slot-actions .btn {
-  padding: 4px 6px;
-  font-size: 0.85rem;
-  border-radius: 8px;
-  transition: all 0.15s ease-in-out;
-}
-
-.slot.assigned .mark-eaten i,
-.slot.assigned .remove-assignment i {
+.planning-header p {
+  font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  vertical-align: middle;
+  color: #6c757d;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
-/* Hover para el botón de eliminar */
-.slot.assigned .remove-assignment:hover {
-  background-color: #ffebee;
-  border-color: #e57373;
-  color: #b71c1c;
-  transform: scale(1.05);
-}
 
-/* Hover para el botón de marcar como comido */
-.slot.assigned .mark-eaten:hover {
-  background-color: #e8f5e9;
-  border-color: #81c784;
-  color: #1b5e20;
-  transform: scale(1.05);
-}
 
-/* Cuando el menú está marcado como comido */
-.slot.eaten .menu-name,
-.slot.eaten .assigned-dishes {
-  text-decoration: line-through;
-  opacity: 0.7;
-}

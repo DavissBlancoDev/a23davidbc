@@ -319,3 +319,88 @@ main {
 .card h2 { color: white; font-size: 1.8rem; margin-bottom: 15px; font-weight: 700; }
 
 .card p { color: #fff; font-size: 1.05rem; line-height: 1.5; }
+
+/* === NAVBAR NUTRIWISE === */
+
+.navbar {
+  background: linear-gradient(90deg, #f5f9f3, #e9f5e0);
+  border-bottom: 2px solid #dceccd;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.navbar-brand {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.6rem;
+  color: #2e7d32 !important;
+}
+
+.navbar-brand:hover {
+  color: #1b5e20 !important;
+}
+
+.navbar-nav .nav-link {
+  color: #3e5631;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #e3f2e1;
+  color: #2e7d32;
+}
+
+.navbar-nav .nav-link.active {
+  background-color: #d3eccb;
+  color: #1b5e20 !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link i {
+  margin-right: 6px;
+  vertical-align: middle;
+  font-size: 1.1rem;
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  filter: hue-rotate(80deg) brightness(0.8);
+}
+
+/* Hover discreto para el enlace activo (Inicio) */
+.navbar .nav-link.active {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.navbar .nav-link.active:hover {
+  color: #2d6a4f; /* verde un poco más oscuro */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-bottom-color: #5aa66d !important; /* subrayado más visible al hover */
+}
+
+
+/* Ajustes responsive */
+@media (max-width: 992px) {
+  .navbar-nav {
+    gap: 0;
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    display: block;
+    margin: 4px 0;
+  }
+}
