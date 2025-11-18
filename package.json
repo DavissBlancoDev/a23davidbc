@@ -1,0 +1,22 @@
+{
+  "name": "a23davidbc",
+  "version": "1.0.0",
+  "description": "Proyecto NutriWise",
+  "keywords": [
+    "NutriWise"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.iessanclemente.net:60600/dawd/a23davidbc.git"
+  },
+  "license": "MIT",
+  "author": "David Blanco",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
