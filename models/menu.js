@@ -18,7 +18,8 @@ const menuSchema = new mongoose.Schema({
       val => val.length >= 1 && val.length <= 3,
       'Debe haber entre 1 y 3 platos'
     ]
-  }
+  },
+  usuarioId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
 }, { timestamps: true });
 
 const Menu = mongoose.model('Menu', menuSchema);
