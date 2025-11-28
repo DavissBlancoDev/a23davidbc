@@ -1,0 +1,134 @@
+/* =========================================================
+   PERFIL - estilos exclusivos
+   ========================================================= */
+
+/* --- CONTENEDOR MAIN --- */
+main {
+  padding: 60px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+/* --- TÍTULO --- */
+main h2 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #384e2c;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* --- FORMULARIO --- */
+#profileForm {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(27, 85, 16, 0.06);
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- SECCIÓN CAMBIO DE CONTRASEÑA --- */
+.password-section {
+  background: #f7faf4;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(27, 85, 16, 0.06);
+  text-align: left;
+}
+
+.password-section .section-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #384e2c;
+  margin-bottom: 20px;
+}
+
+.password-section input.form-control {
+  border-radius: 8px;
+  border: 1px solid #cfe9b8;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+}
+
+.password-section input.form-control:focus {
+  border-color: #7cb342;
+  box-shadow: 0 0 5px rgba(124, 179, 66, 0.3);
+}
+
+.password-section button {
+  background: #7cb342;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+}
+
+.password-section button:hover {
+  background: #5a9130;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 85, 16, 0.15);
+}
+
+
+/* --- LABELS --- */
+#profileForm label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #27471f;
+  margin-bottom: 4px;
+}
+
+/* --- INPUT / SELECT --- */
+#profileForm .form-control,
+#profileForm .form-select {
+  border-radius: 8px;
+  border: 1px solid #cfe9b8;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+}
+
+#profileForm .form-control:focus,
+#profileForm .form-select:focus {
+  border-color: #7cb342;
+  box-shadow: 0 0 5px rgba(124, 179, 66, 0.3);
+  outline: none;
+}
+
+/* --- BOTÓN GUARDAR --- */
+#profileForm button {
+  background: #7cb342;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+#profileForm button:hover {
+  background: #5a9130;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(27, 85, 16, 0.15);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  #profileForm {
+    padding: 20px;
+  }
+  main h2 {
+    font-size: 2rem;
+  }
+}

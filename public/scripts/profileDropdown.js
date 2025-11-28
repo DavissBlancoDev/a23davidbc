@@ -1,4 +1,3 @@
-// profile.js
 document.addEventListener('DOMContentLoaded', () => {
   const profileMenu = document.querySelector(".profile-menu");
   const profileBtn = document.querySelector(".profile-btn");
@@ -12,6 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!profileMenu.contains(e.target)) {
         profileMenu.classList.remove("active");
       }
+    });
+  }
+
+  const logoutBtn = document.querySelector('.logout');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', e => {
+      e.preventDefault();
+      localStorage.removeItem('userId');
+      localStorage.removeItem('userName');
+      window.location.href = 'index.html';
     });
   }
 });
