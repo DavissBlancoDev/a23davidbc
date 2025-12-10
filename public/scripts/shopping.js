@@ -4,8 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const newIngredient = document.getElementById('newIngredient');
   const newQuantity = document.getElementById('newQuantity');
 
-  // Función para crear un item en la lista
-  function addItem(name, quantity = '') {
+  // Leer lista guardada o inicializar vacía
+  let savedIngredients = JSON.parse(localStorage.getItem('shoppingList')) || [];
+
+  function saveToStorage() {
+    localStorage.setItem('shoppingList', JSON.stringify(savedIngredients));
+  }
+
+  // Función solo para renderizar un item en el DOM
+  function renderItem(name, quantity) {
     const li = document.createElement('li');
     li.className = 'list-group-item';
     li.innerHTML = `
@@ -25,10 +32,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Eliminar item
     li.querySelector('.remove-btn').addEventListener('click', () => {
       li.remove();
+      savedIngredients = savedIngredients.filter(
+        ing => !(ing.name === name && ing.quantity === quantity)
+      );
+      saveToStorage();
     });
   }
 
-  // Función para añadir ingrediente (ya existente)
+  // Función para añadir ingrediente (actualiza array + storage + DOM)
+  function addItem(name, quantity = '') {
+    savedIngredients.push({ name, quantity });
+    saveToStorage();
+    renderItem(name, quantity);
+  }
+
+  // Cargar ingredientes al iniciar
+  savedIngredients.forEach(ing => renderItem(ing.name, ing.quantity));
+
+  // Función para añadir ingrediente manualmente
   function addIngredientFromInput() {
     const name = newIngredient.value.trim();
     const quantity = newQuantity.value.trim();
@@ -38,35 +59,26 @@ document.addEventListener('DOMContentLoaded', () => {
     newQuantity.value = '';
   }
 
-  // Botón Añadir
   addBtn.addEventListener('click', addIngredientFromInput);
 
-  // Pulsar Enter en cualquiera de los inputs
   [newIngredient, newQuantity].forEach(input => {
     input.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
-        e.preventDefault(); // evitar que el formulario se envíe
+        e.preventDefault();
         addIngredientFromInput();
       }
     });
   });
 
-
-  // Botón Borrar todo
+  // Borrar todo
   const clearListBtn = document.getElementById('clearListBtn');
-
   clearListBtn.addEventListener('click', () => {
-    if (shoppingList.children.length === 0) return; // nada que borrar
+    if (shoppingList.children.length === 0) return;
     const confirmDelete = confirm('¿Estás seguro de que quieres borrar todos los ingredientes?');
     if (confirmDelete) {
-      shoppingList.innerHTML = ''; // borra todos los items
+      shoppingList.innerHTML = '';
+      savedIngredients = [];
+      saveToStorage();
     }
   });
-
-
-  // 👀 Placeholder: añadir ingredientes del planning semanal automáticamente
-  // Esto se hará cuando tengamos el backend
-  // Ejemplo de prueba:
-  // addItem('Tomates', '500g');
-  // addItem('Leche', '1L');
 });

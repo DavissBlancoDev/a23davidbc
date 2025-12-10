@@ -40,17 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!usuarioId) return alert('No se ha encontrado el usuario. Por favor, inicia sesión de nuevo.');
 
       // Función para recoger plato + ingredientes
+      // Función para recoger plato + ingredientes
       const getPlato = (nameId, ingId) => {
         const nombrePlato = document.getElementById(nameId)?.value.trim();
         if (!nombrePlato) return null;
 
         const ingredientes = {};
-        document.querySelectorAll(`#${ingId} .ingredient-input`).forEach((inp, i) => {
-          if (inp.value.trim()) ingredientes[i + 1] = inp.value.trim();
+        // Recorremos cada "div.input-group" que contiene los inputs
+        document.querySelectorAll(`#${ingId} .input-group`).forEach(div => {
+          const nombre = div.querySelector('.ingredient-name')?.value.trim();
+          const cantidad = div.querySelector('.ingredient-qty')?.value.trim() || '';
+          if (nombre) {
+            ingredientes[nombre] = cantidad; // <-- clave = ingrediente, valor = cantidad
+          }
         });
 
         return { id: Date.now() + Math.random(), nombre: nombrePlato, ingredientes };
       };
+
 
       const platos = [];
       const entrante = getPlato('entranteName', 'entranteIngredients');
