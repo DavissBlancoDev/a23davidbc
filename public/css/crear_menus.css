@@ -145,3 +145,11 @@ main p {
     padding: 15px;
   }
 }
+
+/* Checkbox estilo igual que los headers de acordeón */
+#publicMenu + label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;  /* ajustar si quieres igual exacto al accordion */
+  color: #000;      /* negro */
+}
+
