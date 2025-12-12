@@ -21,10 +21,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // =======================
 // Conexión a MongoDB
 // =======================
+// Usamos MONGO_URI de entorno si está definido (Railway o Docker)
+// Por defecto, en local conecta a localhost
 const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/nutriwise';
 
-mongoose.connect(mongoURI)
-  .then(() => console.log('✅ Conectado a MongoDB'))
+mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+  .then(() => console.log(`✅ Conectado a MongoDB: ${mongoURI}`))
   .catch(err => console.error('❌ Error al conectar MongoDB:', err));
 
 // =======================

@@ -1,25 +1,26 @@
-services:
-  mongo:
-    image: mongo:7
-    container_name: mongo
-    restart: unless-stopped
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
+version: "3.9"
 
+services:
   app:
     build: .
     container_name: a23davidbc-app
-    restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
-      MONGO_URI: mongodb://mongo:27017/a23davidbc
+      - MONGO_URI=mongodb://mongo:27017/nutriwise
     depends_on:
       - mongo
     volumes:
       - .:/usr/src/app
+    command: npm start
+
+  mongo:
+    image: mongo:6.0
+    container_name: a23davidbc-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
 
 volumes:
-  mongo-data:
+  mongo_data:
