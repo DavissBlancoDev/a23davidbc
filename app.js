@@ -21,28 +21,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 // =======================
 // Conexión a MongoDB
 // =======================
-// Usamos MONGO_URI de entorno si está definido (Railway o MongoDB remoto)
-// Por defecto, en local conecta a localhost
+// Usa MONGO_URI de entorno (Atlas) o localhost en desarrollo
 const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/nutriwise';
 
 mongoose.connect(mongoURI)
   .then(() => console.log(`✅ Conectado a MongoDB: ${mongoURI}`))
-  .catch(err => console.error('❌ Error al conectar MongoDB:', err));
+  .catch(err => {
+    console.error('❌ Error al conectar MongoDB:', err);
+    process.exit(1); // Detener app si no hay conexión
+  });
 
 // =======================
 // Rutas modularizadas
 // =======================
 const userRoutes = require('./routes/userRoutes');
-app.use('/usuarios', userRoutes);
-
 const menuRoutes = require('./routes/menuRoutes');
+
+app.use('/usuarios', userRoutes);
 app.use('/api/menus', menuRoutes);
 
 // =======================
 // Rutas de páginas
 // =======================
 const pages = ['index', 'home', 'perfil', 'planning', 'crear_menu', 'recetas', 'lista_compra'];
-
 pages.forEach(page => {
   app.get(`/${page}.html`, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', `${page}.html`));
