@@ -255,5 +255,9 @@ main p {
   line-height: 1.6;
 }
 
+/* Cursor de "dedito" al pasar por slots asignados */
+.slot.assigned:hover {
+  cursor: pointer;
+}
 
 
