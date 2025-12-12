@@ -2,355 +2,109 @@
    PERFIL - estilos exclusivos
    ========================================================= */
 
-/* --- CONTENEDOR MAIN --- */
+/* CONTENEDOR MAIN */
 main {
-  padding: 60px 15px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
+    padding: 60px 15px;
 }
 
-/* --- TÍTULO --- */
+/* TÍTULO */
 main h2 {
-  font-family: 'Baloo 2', cursive;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #384e2c;
-  margin-bottom: 0.5rem;
-  text-align: center;
+    font-family: 'Baloo 2', cursive;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #384e2c;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-/* --- FORMULARIO --- */
-#profileForm {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(27, 85, 16, 0.06);
-  max-width: 500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* --- SECCIÓN CAMBIO DE CONTRASEÑA --- */
-.password-section {
-  background: #f7faf4;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(27, 85, 16, 0.06);
-  text-align: left;
-}
-
-.password-section .section-title {
-  font-family: 'Baloo 2', cursive;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #384e2c;
-  margin-bottom: 20px;
-}
-
-.password-section input.form-control {
-  border-radius: 8px;
-  border: 1px solid #cfe9b8;
-  padding: 10px 12px;
-  transition: all 0.2s ease;
-}
-
-.password-section input.form-control:focus {
-  border-color: #7cb342;
-  box-shadow: 0 0 5px rgba(124, 179, 66, 0.3);
-}
-
-.password-section button {
-  background: #7cb342;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  padding: 10px;
-  margin-top: 10px;
-  transition: all 0.2s ease;
-}
-
-.password-section button:hover {
-  background: #5a9130;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(27, 85, 16, 0.15);
-}
-
-
-/* --- LABELS --- */
-#profileForm label {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #27471f;
-  margin-bottom: 4px;
-}
-
-/* --- INPUT / SELECT --- */
-#profileForm .form-control,
-#profileForm .form-select {
-  border-radius: 8px;
-  border: 1px solid #cfe9b8;
-  padding: 10px 12px;
-  transition: all 0.2s ease;
-}
-
-#profileForm .form-control:focus,
-#profileForm .form-select:focus {
-  border-color: #7cb342;
-  box-shadow: 0 0 5px rgba(124, 179, 66, 0.3);
-  outline: none;
-}
-
-/* --- BOTÓN GUARDAR --- */
-#profileForm button {
-  background: #7cb342;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-}
-
-#profileForm button:hover {
-  background: #5a9130;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(27, 85, 16, 0.15);
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 600px) {
-  #profileForm {
-    padding: 20px;
-  }
-  main h2 {
-    font-size: 2rem;
-  }
-}
-
-.profile-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.profile-section {
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    width: 420px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
-    transition: 0.2s ease;
-}
-
-.profile-section:hover {
-    transform: translateY(-4px);
-}
-
-.section-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #198754;
-}
-
-@media (max-width: 992px) {
-    .profile-section {
-        width: 90%;
-    }
-}
-
-/* CONTENEDOR CENTRAL */
+/* CONTENEDOR DE LOS FORMULARIOS */
 .profile-wrapper {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 50px;
-    margin-top: 40px;
-    flex-wrap: wrap;
+    gap: 40px;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    margin-left: auto;     /* ← CENTRA EL BLOQUE ENTERO */
+    margin-right: auto;    /* ← CENTRA EL BLOQUE ENTERO */
 }
 
-/* TARJETAS BONITAS */
-.profile-card {
-    background: #ffffff;
-    border-radius: 18px;
-    padding: 35px 40px;
-    width: 450px;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    border: 1px solid #e8e8e8;
-
-    transition: all 0.25s ease;
-}
-
-.profile-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 26px rgba(0,0,0,0.12);
-}
-
-/* TITULOS CON ICONOS */
-.section-title {
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #198754;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* INPUTS MÁS LIMPIOS */
-.profile-card .form-control,
-.profile-card .form-select {
-    border-radius: 10px;
-    border: 1px solid #cfd8dc;
-    padding: 10px 14px;
-    transition: border-color 0.2s;
-}
-
-.profile-card .form-control:focus,
-.profile-card .form-select:focus {
-    border-color: #198754;
-    box-shadow: 0 0 0 0.15rem rgba(25, 135, 84, 0.25);
-}
-
-/* BOTONES */
-.profile-card button {
-    border-radius: 12px !important;
-    font-size: 1rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-/* RESPONSIVE */
+/* RESPONSIVE – en móvil se apilan */
 @media (max-width: 992px) {
+    .profile-wrapper {
+        flex-wrap: wrap;   /* apilar */
+    }
+
     .profile-card {
-        width: 95%;
+        width: 100% !important;
+        max-width: 500px;
     }
 }
 
-/* Contenedor de las dos secciones: centrado y con espacio */
-.profile-wrapper {
-    display: flex;
-    justify-content: center;  /* centra horizontalmente */
-    align-items: flex-start;  /* alinea arriba */
-    gap: 40px;                /* espacio entre las tarjetas */
-    flex-wrap: wrap;          /* si la pantalla es pequeña, se apilan */
-    margin-top: 30px;
-}
-
-/* Tarjetas de perfil (Editar perfil y Cambiar contraseña) */
+/* TARJETAS DE PERFIL */
 .profile-card {
-    background-color: #fff;      /* fondo blanco */
-    padding: 30px;
+    background-color: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* sombra suave */
-    max-width: 480px;            /* ancho máximo */
-    width: 100%;
-    font-family: 'Poppins', sans-serif; /* tipografía consistente */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 30px;
+    max-width: 480px;
+    width: 480px;  /* ← NECESARIO PARA ALINEACIÓN PERFECTA */
+    font-family: 'Poppins', sans-serif;
+    transition: 0.25s ease;
 }
 
-/* Títulos de sección con icono y color */
+.profile-card:hover {
+    transform: translateY(-4px);
+}
+
+/* TÍTULO DE CADA FORMULARIO */
 .section-title {
     font-family: 'Baloo 2', cursive;
-    font-weight: 700;
     font-size: 1.5rem;
-    color: #198754;  /* verde NutriWise */
+    font-weight: 700;
+    color: #198754;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-/* Botones dentro de las tarjetas de perfil */
-.profile-card .btn {
+/* FORMULARIOS */
+.profile-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* LABELS */
+.profile-card form .form-label {
     font-weight: 600;
-    border-radius: 8px;
-    padding: 10px 25px;
-    transition: all 0.2s ease-in-out;
+    color: #198754;
 }
 
-/* Botón verde principal (Guardar cambios y Cambiar contraseña) */
-.profile-card .btn-primary,
-.profile-card .btn-success {
-    background-color: #198754;
-    border-color: #198754;
-    color: #fff;
-}
-
-.profile-card .btn-primary:hover,
-.profile-card .btn-success:hover {
-    background-color: #146c43;
-    border-color: #146c43;
-    color: #fff;
-}
-
-/* Contenedor de las dos secciones: centrado y con espacio */
-.profile-wrapper {
-    display: flex;
-    justify-content: center;  /* centra horizontalmente */
-    align-items: flex-start;  /* alinea arriba */
-    gap: 40px;                /* espacio entre las tarjetas */
-    flex-wrap: wrap;          /* si la pantalla es pequeña, se apilan */
-    margin-top: 30px;
-}
-
-/* Tarjetas de perfil (Editar perfil y Cambiar contraseña) */
-.profile-card {
-    background-color: #fff;      /* fondo blanco */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* sombra suave */
-    max-width: 480px;            /* ancho máximo */
-    width: 100%;
-    font-family: 'Poppins', sans-serif; /* tipografía consistente */
-}
-
-/* Títulos de sección con icono y color */
-.section-title {
-    font-family: 'Baloo 2', cursive;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #198754;  /* verde NutriWise */
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Labels de los formularios */
-.profile-card .form-label {
-    font-weight: 600;     /* negrita */
-    color: #198754;       /* mismo color que Editar perfil */
-}
-
-/* Inputs de los formularios */
-.profile-card .form-control {
-    border: 2px solid #198754; /* borde verde */
+/* INPUTS */
+.profile-card form .form-control,
+.profile-card form .form-select {
+    border: 2px solid #198754;
     border-radius: 8px;
     padding: 10px;
     transition: all 0.2s ease-in-out;
 }
 
-.profile-card .form-control:focus {
+.profile-card form .form-control:focus,
+.profile-card form .form-select:focus {
     border-color: #146c43;
-    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(25,135,84,0.25);
 }
 
-/* Botones dentro de las tarjetas de perfil */
+/* BOTONES */
 .profile-card .btn {
     font-weight: 600;
     border-radius: 8px;
     padding: 10px 25px;
     transition: all 0.2s ease-in-out;
-    background-color: #198754;  /* verde uniforme */
+    background-color: #198754;
     border-color: #198754;
     color: #fff;
 }
@@ -358,102 +112,40 @@ main h2 {
 .profile-card .btn:hover {
     background-color: #146c43;
     border-color: #146c43;
-    color: #fff;
 }
 
-/* Labels */
-.form-label {
-    font-weight: 600;
-    color: #198754;
+/* Forzar que el título quede centrado siempre */
+main h2 {
+  display: block;       /* por si estaba en inline/flex */
+  width: 100%;
+  text-align: center !important;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* Inputs */
-.form-control {
-    border: 2px solid #198754;
-    border-radius: 8px;
-    padding: 10px;
-}
-
-/* Botones */
-.btn-primary {
-    background-color: #198754;
-    border-color: #198754;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 10px 25px;
-}
-
-.btn-primary:hover {
-    background-color: #146c43;
-    border-color: #146c43;
-}
-
-/* Contenedor de los dos formularios */
+/* Asegurar que el bloque de formularios está centrado y no ocupa todo el ancho */
 .profile-wrapper {
-    display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: nowrap;
+  margin: 20px auto 0 auto;   /* centrado horizontalmente */
+  max-width: 1020px;          /* opcional: límite para que no se expanda demasiado */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Para pantallas pequeñas: apilar y centrar contenidos */
+@media (max-width: 992px) {
+  .profile-wrapper {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem; /* espacio entre formularios */
-}
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
 
-/* Tarjetas de perfil */
-.profile-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    padding: 2rem;
-    max-width: 500px; /* ancho de ambas */
-    flex: 1 1 400px; /* se adaptan al contenedor */
-}
-
-/* Título de sección */
-.profile-card .section-title {
-    font-family: 'Baloo 2', cursive;
-    font-size: 1.5rem;
-    color: #2c7a7b; /* mismo color que tu primer formulario */
-    margin-bottom: 1.5rem;
-}
-
-/* Formulario común para ambos */
-.profile-card form {
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Labels */
-.profile-card form .form-label {
-    font-weight: 600;
-    color: #333; /* mismo color que el primer formulario */
-}
-
-/* Inputs */
-.profile-card form .form-control,
-.profile-card form .form-select {
-    border: 2px solid #28a745; /* borde verde */
-    border-radius: 6px;
-    padding: 0.5rem;
-}
-
-/* Botones */
-.profile-card form .btn {
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 6px;
-    padding: 0.5rem 2rem;
-}
-
-/* Botón primario */
-.profile-card form .btn-primary {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-.profile-card form .btn-primary:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-}
-
-/* Centramos el contenido de cada formulario */
-.profile-card form .text-center {
-    margin-top: 1.5rem;
+  .profile-card {
+    width: 100% !important;
+    max-width: 520px;
+  }
 }
