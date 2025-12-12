@@ -17,11 +17,32 @@ NutriWise te ayuda también a realizar un conteo de las calorías y macronutrien
 
 ## Descripción
 
-> *TODO*: Realiza una breve descripción del proyecto. No menos de 100 palabras y no más de 300. Resalta lo fundamental **con tus propias palabras**. Utiliza un lenguaje correcto, **pero natural**, que lo entienda todo el mundo, incluso y en especial, las personas que no tengan un conocimiento técnico avanzado. Puede ser un estracto o resumen de apartados que ya contemples en otros ficheros.
+NutriWise es un proyecto cuyo fin es ayudar a mantener un planificación semanal de tus comidas, que además incluye información nutricional sobre las comidas que añades a tu planificador. Cuenta también con una lista de la compra a la que puedes añadir los ingredientes que no tengas a la hora de crear un menú. De todos modos esta lista de la compra no está limitada a solo esta funcionalidad, sino que podrás añadir todo lo que tú desees a la lista.
 
 ## Instalación / Puesta en marcha
 
-> *TODO*: En este apartado describe con toda precisión y a poder ser con la mayor simplicidad/facilidad posible, cómo poner en marcha tu aplicación para probarla (en un ambiente local). Se valorará muy positivamente que este proceso sea lo más fácil posible, con una simple instrucción (p. e. un script de instalación). Docker es ideal para esto.
+Hay dos maneras de probar la aplicación:
+
+### Opción 1: Probar localmente con Railway
+
+1. Clona este repositorio en tu máquina local:
+
+```bash
+git clone https://github.com/tu-usuario/a23davidbc.git
+cd a23davidbc
+```
+2. Crea un proyecto en [Railway](https://railway.com/) y añade un servicio de MongoDB.
+
+Configura las variables de entorno necesarias (MONGO_URL o MONGO_URI según tu configuración).
+
+Despliega el proyecto en Railway. La aplicación arrancará automáticamente y estará accesible desde la URL que proporciona Railway.
+
+### Opción 2: Acceso directo para maintainers
+
+Si eres maintainer del proyecto, no necesitas configurar nada:
+Simplemente accede a la URL del proyecto en Railway y la aplicación ya estará funcionando.
+
+> Nota: También existe la opción de levantar la aplicación localmente con Docker usando docker-compose up --build, pero Railway simplifica todo el proceso.
 
 ## Uso
 
@@ -30,21 +51,26 @@ NutriWise te ayuda también a realizar un conteo de las calorías y macronutrien
 
 ## Sobre el autor
 
-> *TODO*: Realiza una breve descripción de quien eres (perfil profesional), tus puntos fuertes, o tecnologías que más dominas... y porqué te has decantado por este proyecto. **No más de 200 palabras**. Indica la forma fiable de contactar contigo en el presente y en el futuro.
+¡Hola! Soy David Blanco, el creador de este proyecto. Soy un estudiante de Desarrollo de Aplicaciones Web, que se encuentra realizando este proyecto para su Proyecto Fin de Ciclo. En este proyecto nos hemos decantado por unas tecnologías de JavaScript, ya que es uno de los lenguajes de programación en los que más comodo me siento. Me he decantado por NutriWise, ya que quería realizar una aplicación sencilla de seguimiento nutricional para mi dia a dia y las verisones que yo me había encontrado en la web no eran de mi agrado.
+
+Si quisieran saber más de mi pueden contactar conmigo en mi [correo electronico personal](mailto:blanco3212@gmail.com)
+
 
 ## Licencia
 
-> *TODO*: Brevísimamente. Indica qué licencia usarás y crea un link a ella. Hay miles de ejemplos en Github.
-> *TODO*: Es requisito INDISPENSABLE el licenciar explícitamente el proyecto software. Se recomienda licenciar con *MIT License* (como viene en la plantilla) o *GNU Free Documentation License Version 1.3*. Presencia de un fichero `LICENSE` en la raiz del repo, con tu fichero de licencia. Recuerda que si empleas una licencia de software libre estás autorizando la derivación de tu obra bajo la misma licencia que elijas, pudiendo dar continuidad, p. e. otro alumno, para continuar tu proyecto en otro curso.
-> Si tu proyecto tiene además otro tipo contenido documental, recomendamos los términos de *GNU Free Documentation License Version 1.3*, crea igualmente el fichero `LICENSE`. Será especialmente valorado en este caso, la claridad de la especificación para que el proyecto pueda ser ejecutado partiendo de lo proyectado.
-> Ten en cuenta que estás cediendo el uso de este software y sus subproductos generados a la comunidad.
+Para la licencia del proyecto puedes visitar el archivo [LICENSE](LICENSE)
 
 ## Documentación
-
-> *TODO*: Emplaza a quien se haya interesado en tu proyecto a leer una guía o documentación extendida del mismo. Haz un link a ella en este punto.
 
 Este proyecto dispone de [una documentación más extensa](doc/doc.md) del proyecto que recomiendo revisar.
 
 ## Guía de contribución
 
-> *TODO*: Tratándose de un proyecto de software libre, es muy importante que expongas cómo se puede contribuir con tu proyecto. Algunos ejemplos de esto son realizar nuevas funcionalidades, corrección y/u optimización del código, realización de tests automatizados, nuevas interfaces de integración, desarrollo de plugins, etc. etc. Sé lo más conciso que puedas.
+¡Gracias por querer contribuir a **Nutriwise**! 🙌 Sea cual sea tu propósito:
+
+- Añadir nuevas funcionalidades a la aplicación
+- Corregir errores
+- Mejorar la documentación
+- Sugerir mejoras o nuevas ideas
+
+Por favor, haz un **fork** del repositorio, crea una rama para tus cambios y abre un **pull request**. Asegúrate de que tu código funcione correctamente y siga las convenciones de estilo del proyecto.

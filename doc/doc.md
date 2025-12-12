@@ -16,6 +16,7 @@
   - [Planificación temporal](#planificación-temporal)
   - [Presupuesto](#presupuesto)
 - [Conclusiones](#conclusiones)
+- [Resumen del Proyecto](#resumen-del-proyecto)
 - [Referencias, Fuentes consultadas y Recursos externos: Webgrafía](#referencias-fuentes-consultadas-y-recursos-externos-webgrafía)
 
 ## Introducción
@@ -46,11 +47,11 @@ La aplicación se aplicará como una prueba de concepto.
 
 ## Funcionalidades del proyecto
 
-- [ ] Login del Usuario. El usuario debe tener un login para poder guardar su progreso.
-- [ ] Página de creación de menús. Debe dejar al usuario crear un menú de al menos un plato principal, entrante y postre seran opcionales.
-- [ ] Página de seguimiento semanal. Será un calendario semanal donde el usuario puede añadir distintos menús a cada día para crear un planning semanal.
-- [ ] Lista de la compra. Una lista de la compra que se creará a según los menús que se añadan al planning semanal.
-- [ ] Página de menus preestrablecidos. Página en la que el usuario ya verá menus ya hechos y que podrá añadir al planning semanal sin necesidad de que él mismo tenga que crear el menú.
+- [X] Login del Usuario. El usuario debe tener un login para poder guardar su progreso.
+- [X] Página de creación de menús. Debe dejar al usuario crear un menú de al menos un plato principal, entrante y postre seran opcionales.
+- [X] Página de seguimiento semanal. Será un calendario semanal donde el usuario puede añadir distintos menús a cada día para crear un planning semanal.
+- [X] Lista de la compra. Una lista de la compra que se creará a según los menús que se añadan al planning semanal.
+- [X] Página de menus preestrablecidos. Página en la que el usuario ya verá menus ya hechos y que podrá añadir al planning semanal sin necesidad de que él mismo tenga que crear el menú.
 
 ## Tipos de usuario
 
@@ -132,9 +133,19 @@ Los gastos de la web serían los siguientes.
 
 ## Conclusiones
 
-> Deja esta apartado para el final. Realiza un resumen de todo lo que ha supuesto la realización de tu proyecto. Debe ser una redacción breve. Un resumen de los hitos conseguidos más importantes y de lo aprendido durante el proceso.
-> Puede ser un buen punto de partida para organizar tu presentación y ajustarla al tiempo que tienes.
+## Resumen del Proyecto
+
+La realización de este proyecto ha supuesto un aprendizaje completo en el desarrollo de aplicaciones web con Node.js y MongoDB, así como en la gestión de despliegues con Docker y Railway.  
+
+Durante el proceso se han alcanzado varios hitos importantes:
+
+- Diseño y estructuración de la aplicación con rutas, controladores y modelos.
+- Implementación de la conexión a base de datos MongoDB, tanto local como remota.
+- Contenerización de la aplicación y la base de datos usando Docker.
+- Despliegue exitoso en Railway, haciendo la app accesible desde cualquier lugar.
+- Configuración de variables de entorno y ajustes necesarios para producción.
+- Creación de una guía de contribución y documentación básica del proyecto.
 
 ## Referencias, Fuentes consultadas y Recursos externos: Webgrafía
 
-> *TODO*: Enlaces externos y descipciones de estos enlaces que creas conveniente indicar aquí. Generalmente ya van a estar integrados con tu documentación, pero si requieres realizar un listado de ellos, este es el lugar.
+
