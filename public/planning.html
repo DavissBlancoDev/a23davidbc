@@ -81,157 +81,78 @@
     </div>
 
     <div class="table-responsive">
-      <table class="table table-bordered text-center align-middle planning-table">
-        <thead class="table-success">
-          <tr>
-            <th class="text-start">Comida / Día</th>
-            <th>Lunes</th>
-            <th>Martes</th>
-            <th>Miércoles</th>
-            <th>Jueves</th>
-            <th>Viernes</th>
-            <th>Sábado</th>
-            <th>Domingo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th class="text-start">Desayuno</th>
-            <td>
-              <div class="slot" data-day="lunes" data-meal="desayuno"><button class="btn add-menu-btn"
-                  title="Añadir menú">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="martes" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="miercoles" data-meal="desayuno"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-            <td>
-              <div class="slot" data-day="jueves" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="viernes" data-meal="desayuno"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-            <td>
-              <div class="slot" data-day="sabado" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="domingo" data-meal="desayuno"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-          </tr>
+      <!-- Ejemplo de tabla de planning con data-slot-id -->
+<table class="table table-bordered text-center align-middle planning-table">
+  <thead class="table-success">
+    <tr>
+      <th class="text-start">Comida / Día</th>
+      <th>Lunes</th>
+      <th>Martes</th>
+      <th>Miércoles</th>
+      <th>Jueves</th>
+      <th>Viernes</th>
+      <th>Sábado</th>
+      <th>Domingo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="text-start">Desayuno</th>
+      <td><div class="slot" data-slot-id="lunes-desayuno" data-day="lunes" data-meal="desayuno"><button class="btn add-menu-btn" title="Añadir menú">+</button></div></td>
+      <td><div class="slot" data-slot-id="martes-desayuno" data-day="martes" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="miercoles-desayuno" data-day="miercoles" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="jueves-desayuno" data-day="jueves" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="viernes-desayuno" data-day="viernes" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="sabado-desayuno" data-day="sabado" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="domingo-desayuno" data-day="domingo" data-meal="desayuno"><button class="btn add-menu-btn">+</button></div></td>
+    </tr>
 
-          <tr>
-            <th class="text-start">Almuerzo</th>
-            <td>
-              <div class="slot" data-day="lunes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="martes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="miercoles" data-meal="almuerzo"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-            <td>
-              <div class="slot" data-day="jueves" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="viernes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-            <td>
-              <div class="slot" data-day="sabado" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="domingo" data-meal="almuerzo"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-          </tr>
+    <tr>
+      <th class="text-start">Almuerzo</th>
+      <td><div class="slot" data-slot-id="lunes-almuerzo" data-day="lunes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="martes-almuerzo" data-day="martes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="miercoles-almuerzo" data-day="miercoles" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="jueves-almuerzo" data-day="jueves" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="viernes-almuerzo" data-day="viernes" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="sabado-almuerzo" data-day="sabado" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="domingo-almuerzo" data-day="domingo" data-meal="almuerzo"><button class="btn add-menu-btn">+</button></div></td>
+    </tr>
 
-          <tr>
-            <th class="text-start">Comida</th>
-            <td>
-              <div class="slot" data-day="lunes" data-meal="comida"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="martes" data-meal="comida"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="miercoles" data-meal="comida"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-            <td>
-              <div class="slot" data-day="jueves" data-meal="comida"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="viernes" data-meal="comida"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="sabado" data-meal="comida"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="domingo" data-meal="comida"><button class="btn add-menu-btn">+</button></div>
-            </td>
-          </tr>
+    <tr>
+      <th class="text-start">Comida</th>
+      <td><div class="slot" data-slot-id="lunes-comida" data-day="lunes" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="martes-comida" data-day="martes" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="miercoles-comida" data-day="miercoles" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="jueves-comida" data-day="jueves" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="viernes-comida" data-day="viernes" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="sabado-comida" data-day="sabado" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="domingo-comida" data-day="domingo" data-meal="comida"><button class="btn add-menu-btn">+</button></div></td>
+    </tr>
 
-          <tr>
-            <th class="text-start">Merienda</th>
-            <td>
-              <div class="slot" data-day="lunes" data-meal="merienda"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="martes" data-meal="merienda"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="miercoles" data-meal="merienda"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-            <td>
-              <div class="slot" data-day="jueves" data-meal="merienda"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="viernes" data-meal="merienda"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-            <td>
-              <div class="slot" data-day="sabado" data-meal="merienda"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="domingo" data-meal="merienda"><button class="btn add-menu-btn">+</button>
-              </div>
-            </td>
-          </tr>
+    <tr>
+      <th class="text-start">Merienda</th>
+      <td><div class="slot" data-slot-id="lunes-merienda" data-day="lunes" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="martes-merienda" data-day="martes" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="miercoles-merienda" data-day="miercoles" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="jueves-merienda" data-day="jueves" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="viernes-merienda" data-day="viernes" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="sabado-merienda" data-day="sabado" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="domingo-merienda" data-day="domingo" data-meal="merienda"><button class="btn add-menu-btn">+</button></div></td>
+    </tr>
 
-          <tr>
-            <th class="text-start">Cena</th>
-            <td>
-              <div class="slot" data-day="lunes" data-meal="cena"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="martes" data-meal="cena"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="miercoles" data-meal="cena"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="jueves" data-meal="cena"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="viernes" data-meal="cena"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="sabado" data-meal="cena"><button class="btn add-menu-btn">+</button></div>
-            </td>
-            <td>
-              <div class="slot" data-day="domingo" data-meal="cena"><button class="btn add-menu-btn">+</button></div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <tr>
+      <th class="text-start">Cena</th>
+      <td><div class="slot" data-slot-id="lunes-cena" data-day="lunes" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="martes-cena" data-day="martes" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="miercoles-cena" data-day="miercoles" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="jueves-cena" data-day="jueves" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="viernes-cena" data-day="viernes" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="sabado-cena" data-day="sabado" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+      <td><div class="slot" data-slot-id="domingo-cena" data-day="domingo" data-meal="cena"><button class="btn add-menu-btn">+</button></div></td>
+    </tr>
+  </tbody>
+</table>
+
     </div>
   </main>
 

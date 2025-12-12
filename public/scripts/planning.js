@@ -17,6 +17,56 @@ document.addEventListener("DOMContentLoaded", () => {
   let MENUS = [];
 
   // ============================
+  // Guardar el planning en localStorage
+  // ============================
+  function savePlanningState() {
+    const slotsState = {};
+    document.querySelectorAll('.slot').forEach(slot => {
+      const slotId = slot.dataset.slotId;
+      if (slot.classList.contains('assigned')) {
+        const menuName = slot.querySelector('.menu-name').textContent;
+        const dishes = Array.from(slot.querySelectorAll('.assigned-dishes div')).map(d => d.textContent);
+        const eaten = slot.classList.contains('eaten');
+        slotsState[slotId] = { menuName, dishes, eaten };
+      }
+    });
+    localStorage.setItem('planningState', JSON.stringify(slotsState));
+  }
+
+  // ============================
+  // Recuperar el planning desde localStorage
+  // ============================
+  function loadPlanningState() {
+    const slotsState = JSON.parse(localStorage.getItem('planningState') || '{}');
+    Object.entries(slotsState).forEach(([slotId, data]) => {
+      const slotEl = document.querySelector(`.slot[data-slot-id="${slotId}"]`);
+      if (!slotEl) return;
+
+      slotEl.classList.add('assigned');
+      if (data.eaten) slotEl.classList.add('eaten');
+
+      slotEl.innerHTML = `
+        <div class="assigned-header">
+          <div class="menu-name">${data.menuName}</div>
+        </div>
+        <div class="assigned-dishes mt-1 small text-muted">
+          ${data.dishes.map(d => `<div>${d}</div>`).join('')}
+        </div>
+        <div class="slot-actions d-flex justify-content-center gap-2 mt-2">
+          <button class="btn btn-sm ${data.eaten ? 'btn-success' : 'btn-outline-success'} mark-eaten" title="Marcar como comido">
+            <i class="bi ${data.eaten ? 'bi-check-circle-fill' : 'bi-check2'}"></i>
+          </button>
+          <button class="btn btn-sm btn-outline-danger remove-assignment" title="Eliminar menú">
+            <i class="bi bi-trash3"></i>
+          </button>
+        </div>
+      `;
+
+      attachSlotButtons(slotEl);
+    });
+  }
+
+  // ============================
   // Traer menús del usuario desde backend
   // ============================
   async function fetchUserMenus() {
@@ -34,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
         id: menu._id,
         name: menu.nombre,
         dishes: menu.platos.map(p => ({
-          name: p.nombre, // nombre del plato
-          ingredientes: p.ingredientes // objeto {ingrediente: cantidad}
+          name: p.nombre,
+          ingredientes: p.ingredientes
         }))
       }));
 
@@ -98,8 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         const checkbox = li.querySelector('input');
-
-        // Evento: marcar/desmarcar con efecto tachado
         checkbox.addEventListener('change', () => {
           const span = li.querySelector('span');
           if (!checkbox.checked) {
@@ -124,10 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ============================
   function confirmAdd() {
     if (!activeSlot || !activeMenu) return;
-
     const slotEl = activeSlot;
 
-    // Añadimos al planning solo el nombre del menú y los platos
+    // Añadimos al planning
     slotEl.classList.add('assigned');
     slotEl.innerHTML = `
       <div class="assigned-header">
@@ -146,27 +193,32 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-    // ============================
-    // Guardar ingredientes desmarcados en lista de la compra
-    // ============================
+    // Guardamos ingredientes desmarcados en lista de la compra
     const uncheckedIngredients = [];
     detailIngredients.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       if (!checkbox.checked) {
         const span = checkbox.nextElementSibling;
-        const text = span.textContent; // "Tomate (500g)"
+        const text = span.textContent;
         const match = text.match(/(.+)\s\((.+)\)/);
-        if (match) {
-          uncheckedIngredients.push({ name: match[1], quantity: match[2] });
-        }
+        if (match) uncheckedIngredients.push({ name: match[1], quantity: match[2] });
       }
     });
-
     const currentShopping = JSON.parse(localStorage.getItem('shoppingList')) || [];
     localStorage.setItem('shoppingList', JSON.stringify([...currentShopping, ...uncheckedIngredients]));
 
-    // ============================
-    // Botones de acción del slot
-    // ============================
+    attachSlotButtons(slotEl);
+
+    detailModal.hide();
+    activeMenu = null;
+    activeSlot = null;
+
+    savePlanningState();
+  }
+
+  // ============================
+  // Asignar eventos a botones de slot
+  // ============================
+  function attachSlotButtons(slotEl) {
     const removeBtn = slotEl.querySelector('.remove-assignment');
     removeBtn.addEventListener('click', () => {
       slotEl.style.transition = 'opacity 0.3s ease';
@@ -176,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slotEl.innerHTML = `<button class="btn add-menu-btn">+</button>`;
         attachAddHandler(slotEl.querySelector('.add-menu-btn'));
         slotEl.style.opacity = '1';
+        savePlanningState();
       }, 300);
     });
 
@@ -194,11 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
         checkBtn.classList.add('btn-outline-success');
         checkBtn.classList.remove('btn-success');
       }
+      savePlanningState();
     });
-
-    detailModal.hide();
-    activeMenu = null;
-    activeSlot = null;
   }
 
   // ============================
@@ -208,15 +258,18 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener('click', async () => {
       const slotEl = btn.closest('.slot');
       activeSlot = slotEl;
-      await fetchUserMenus(); // traemos menús de la BD
+      await fetchUserMenus();
       selectModal.show();
     });
   }
 
   document.querySelectorAll('.add-menu-btn').forEach(btn => attachAddHandler(btn));
-
   document.getElementById('confirmAddToSlot').addEventListener('click', confirmAdd);
-
   detailModalEl.addEventListener('hidden.bs.modal', () => activeMenu = null);
+
+  // ============================
+  // Cargar estado al iniciar
+  // ============================
+  loadPlanningState();
 
 });
