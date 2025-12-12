@@ -26,10 +26,12 @@ const mongoURI = process.env.MONGO_URI;
 if (!mongoURI) {
   console.error('❌ Error: MONGO_URI no está definido en las variables de entorno');
   process.exit(1);
+} else {
+  console.log('🔹 MONGO_URI leída desde entorno: ✅ definida');
 }
 
 mongoose.connect(mongoURI)
-  .then(() => console.log(`✅ Conectado a MongoDB`))
+  .then(() => console.log('✅ Conectado a MongoDB'))
   .catch(err => console.error('❌ Error al conectar MongoDB:', err));
 
 // =======================
