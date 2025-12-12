@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  app:
+    build: .
+    container_name: a23davidbc-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/a23davidbc
+    depends_on:
+      - mongo
+    volumes:
+      - .:/usr/src/app
+
+volumes:
+  mongo-data:

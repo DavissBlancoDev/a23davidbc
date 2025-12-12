@@ -9,19 +9,21 @@ const path = require('path');
 // Crear servidor Express
 // =======================
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Railway asignará PORT automáticamente
 
 // =======================
 // Middlewares
 // =======================
-app.use(express.json()); // parsea JSON
-app.use(express.urlencoded({ extended: true })); // parsea formularios
-app.use(express.static(path.join(__dirname, 'public'))); // servir archivos estáticos
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // =======================
 // Conexión a MongoDB
 // =======================
-mongoose.connect('mongodb://127.0.0.1:27017/nutriwise')
+const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/nutriwise';
+
+mongoose.connect(mongoURI)
   .then(() => console.log('✅ Conectado a MongoDB'))
   .catch(err => console.error('❌ Error al conectar MongoDB:', err));
 
@@ -32,35 +34,24 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/usuarios', userRoutes);
 
 const menuRoutes = require('./routes/menuRoutes');
-app.use('/api/menus', menuRoutes); // <-- aquí montamos las rutas de menús
+app.use('/api/menus', menuRoutes);
 
 // =======================
-// Ruta raíz (index.html)
+// Rutas de páginas
+// =======================
+const pages = ['index', 'home', 'perfil', 'planning', 'crear_menu', 'recetas', 'lista_compra'];
+
+pages.forEach(page => {
+  app.get(`/${page}.html`, (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', `${page}.html`));
+  });
+});
+
+// =======================
+// Ruta raíz
 // =======================
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// =======================
-// Servir otras páginas directamente (opcional)
-// =======================
-app.get('/home.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'home.html'));
-});
-app.get('/perfil.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'perfil.html'));
-});
-app.get('/planning.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'planning.html'));
-});
-app.get('/crear_menu.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'crear_menu.html'));
-});
-app.get('/recetas.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'recetas.html'));
-});
-app.get('/lista_compra.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'lista_compra.html'));
 });
 
 // =======================
