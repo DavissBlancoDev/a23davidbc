@@ -12,9 +12,6 @@ NutriWise te ayuda también a realizar un conteo de las calorías y macronutrien
 
 ¡NutriWise tambien se acuerda de los poco originales en la cocina! NutriWise cuenta con amplio apartado de menús preestablecidos, por lo que ni si quiera necesitarás pensar que recetas hacer. 
 
-> *TODO*: Este documento será la "*página de aterrizaje*" de tu proyecto. Será lo primero que vean los que se interesen por él. Cúida su redacción con todo tu mimo. Elimina posteriormente todas las lineas "*TODO*" cuando creas finalizada su redacción.
-> Puedes acompañar a la redacción de este fichero con imágenes o gifs, pero no abuses de ellos.
-
 ## Descripción
 
 NutriWise es un proyecto cuyo fin es ayudar a mantener un planificación semanal de tus comidas, que además incluye información nutricional sobre las comidas que añades a tu planificador. Cuenta también con una lista de la compra a la que puedes añadir los ingredientes que no tengas a la hora de crear un menú. De todos modos esta lista de la compra no está limitada a solo esta funcionalidad, sino que podrás añadir todo lo que tú desees a la lista.
@@ -46,8 +43,13 @@ Simplemente accede a la URL del proyecto en Railway y la aplicación ya estará 
 
 ## Uso
 
-> *TODO*: Es este apartado describe brevemente cómo se usará este software. Plantea un uso básico (como un *quickstart*) Si tiene una interfaz de terminal, puedes describir aquí su sintaxis. Si tiene una interfaz gráfica de usuario, describe aquí **sólo el uso** (a modo de sumario) **de los aspectos más relevantes de su funcionamiento** (máxima brevedad, como si fuese un anuncio reclamo o comercial).
-> Podrías incluso hacer una pequeña demo en *gif* o un pantallazo de la misma muy descriptivo. Recueda que esto es un reclamo para que la prueben o lean tu documentación más extensa.
+La funcionalidad de NutriWise es muy sencilla. Una vez registrados o logueados, tenemos 3 apartados: Creacion de menús, el planning semanal y la lista de la compra.
+
+En la creación de menús crearemos nuestros menus, donde le daremos un nombre y describiremos nuestros platos y añadimos los ingredientes si queremos.
+
+En la parte del planning añadimos estos menus creados anteriormente, donde podremos seleccionar que ingredientes tenemos o no tenemos para que se añadan directamente a la cesta. Una vez añadido al planning podemos marcar el menú como "comido", eliminarlo o si hacemos click ver un resumen nutricional del mismo.
+
+Finalmente en la página de la lista de la compra, veremos la lista con los productos que se han añadido directamente desde el planning o podemos añadir unos nuevos. Igualmente, podemos borrar elementos y marcarlos como "comprados".
 
 ## Sobre el autor
 
