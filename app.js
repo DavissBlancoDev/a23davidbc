@@ -21,18 +21,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 // =======================
 // Conexión a MongoDB
 // =======================
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = process.env.MONGO_URL;
 
 if (!mongoURI) {
-  console.error('❌ Error: MONGO_URI no está definido en las variables de entorno');
+  console.error('❌ Error: MONGO_URL no está definido en las variables de entorno');
   process.exit(1);
-} else {
-  console.log('🔹 MONGO_URI leída desde entorno: ✅ definida');
 }
 
 mongoose.connect(mongoURI)
-  .then(() => console.log('✅ Conectado a MongoDB'))
+  .then(() => console.log(`✅ Conectado a MongoDB`))
   .catch(err => console.error('❌ Error al conectar MongoDB:', err));
+
 
 // =======================
 // Rutas modularizadas
