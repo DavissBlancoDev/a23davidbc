@@ -9,7 +9,7 @@ const path = require('path');
 // Crear servidor Express
 // =======================
 const app = express();
-const PORT = process.env.PORT || 3000; // Railway asignará PORT automáticamente
+const PORT = process.env.PORT || 3000;
 
 // =======================
 // Middlewares
@@ -21,23 +21,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 // =======================
 // Conexión a MongoDB
 // =======================
-// Usa MONGO_URI de entorno (Atlas) o localhost en desarrollo
-const mongoURI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/nutriwise';
+const mongoURI = process.env.MONGO_URI;
+
+if (!mongoURI) {
+  console.error('❌ Error: MONGO_URI no está definido en las variables de entorno');
+  process.exit(1);
+}
 
 mongoose.connect(mongoURI)
-  .then(() => console.log(`✅ Conectado a MongoDB: ${mongoURI}`))
-  .catch(err => {
-    console.error('❌ Error al conectar MongoDB:', err);
-    process.exit(1); // Detener app si no hay conexión
-  });
+  .then(() => console.log(`✅ Conectado a MongoDB`))
+  .catch(err => console.error('❌ Error al conectar MongoDB:', err));
 
 // =======================
 // Rutas modularizadas
 // =======================
 const userRoutes = require('./routes/userRoutes');
-const menuRoutes = require('./routes/menuRoutes');
-
 app.use('/usuarios', userRoutes);
+
+const menuRoutes = require('./routes/menuRoutes');
 app.use('/api/menus', menuRoutes);
 
 // =======================
