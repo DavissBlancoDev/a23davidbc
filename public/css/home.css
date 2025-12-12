@@ -67,3 +67,77 @@ main h2 {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(25, 135, 84, 0.15);
 }
+
+/* Estilo del título de bienvenida */
+.welcome-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #198754; /* verde de bootstrap */
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Subrayado decorativo */
+.welcome-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -8px;
+  width: 70%;
+  height: 4px;
+  background-color: #198754;
+  border-radius: 10px;
+}
+
+/* Subtítulo */
+.welcome-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 650px;
+  margin: 25px auto 45px auto;
+  line-height: 1.6;
+}
+
+/* Animación suave al cargar */
+.welcome-title,
+.welcome-subtitle {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.welcome-subtitle {
+  animation-delay: 0.15s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-title,
+.welcome-subtitle {
+  display: block !important;      /* Obliga a ir uno debajo del otro */
+  width: 100%;                    /* Ocupar la línea completa */
+}
+
+main.container.text-center {
+  display: block !important;      /* Evita que algún flex global afecte */
+  flex-direction: column !important;
+}
+
+.welcome-title {
+  margin-bottom: 60px !important;   /* Espacio bajo el título */
+}
+
+.welcome-subtitle {
+  margin-bottom: 80px !important;   /* Espacio bajo el subtítulo */
+  line-height: 1.6;                 /* Más cómodo de leer */
+}
+

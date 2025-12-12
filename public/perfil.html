@@ -44,58 +44,64 @@
     <!-- MAIN -->
     <main class="container py-5">
 
-        <!-- Editar perfil -->
-        <section class="mb-5">
-            <h2 class="text-center mb-4">Editar perfil</h2>
-            <form id="profileForm" class="mx-auto" style="max-width: 500px;">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" required>
-                </div>
+        <h2 class="text-center mb-5">Mi perfil</h2>
 
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
+        <!-- CONTENEDOR DE LAS DOS CARDS -->
+        <div class="d-flex flex-wrap justify-content-center gap-4">
 
-                <div class="mb-3">
-                    <label for="sexo" class="form-label">Sexo</label>
-                    <select id="sexo" class="form-select">
-                        <option value="">Selecciona...</option>
-                        <option value="hombre">Hombre</option>
-                        <option value="mujer">Mujer</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                </div>
+            <!-- Editar perfil -->
+            <section class="profile-card">
+                <h4 class="section-title"><i class="bi bi-person-lines-fill"></i> Editar perfil</h4>
+                <form id="profileForm" class="mx-auto" style="max-width: 500px;">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
 
-                <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary px-5">Guardar cambios</button>
-                </div>
-            </form>
-        </section>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
 
-        <!-- Cambiar contraseña -->
-        <section>
-            <h2 class="text-center mb-4">Cambiar contraseña</h2>
-            <form id="passwordForm" class="mx-auto" style="max-width: 400px;">
-                <div class="mb-3">
-                    <label for="currentPassword" class="form-label">Contraseña actual</label>
-                    <input type="password" class="form-control" id="currentPassword" placeholder="Introduce tu contraseña actual" required>
-                </div>
-                <div class="mb-3">
-                    <label for="newPassword" class="form-label">Nueva contraseña</label>
-                    <input type="password" class="form-control" id="newPassword" placeholder="Introduce la nueva contraseña" required>
-                </div>
-                <div class="mb-3">
-                    <label for="confirmPassword" class="form-label">Repetir nueva contraseña</label>
-                    <input type="password" class="form-control" id="confirmPassword" placeholder="Repite la nueva contraseña" required>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-success w-100">Cambiar contraseña</button>
-                </div>
-            </form>
-        </section>
+                    <div class="mb-3">
+                        <label for="sexo" class="form-label">Sexo</label>
+                        <select id="sexo" class="form-select">
+                            <option value="">Selecciona...</option>
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
 
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary px-5">Guardar cambios</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Cambiar contraseña -->
+            <section class="profile-card">
+                <h4 class="section-title"><i class="bi bi-shield-lock"></i> Cambiar contraseña</h4>
+                <form id="passwordForm" class="mx-auto" style="max-width: 500px;">
+                    <div class="mb-3">
+                        <label for="currentPassword" class="form-label">Contraseña actual</label>
+                        <input type="password" class="form-control" id="currentPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">Nueva contraseña</label>
+                        <input type="password" class="form-control" id="newPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Repetir nueva contraseña</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-primary px-5">Guardar cambios</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
     </main>
 
     <!-- FOOTER -->
